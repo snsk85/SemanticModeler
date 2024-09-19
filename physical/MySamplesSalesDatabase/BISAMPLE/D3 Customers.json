@@ -1,0 +1,26 @@
+{
+  "physicalTable" : {
+    "name" : "D3 Customers",
+    "sourceTable" : "physicalTable:MySamplesSalesDatabase.BISAMPLE.SAMP_CUSTOMERS_D",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MySamplesSalesDatabase.BISAMPLE.F1 Revenue",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MySamplesSalesDatabase.BISAMPLE.D3 Customers.CUST_KEY",
+        "rightColumn" : "physicalColumn:MySamplesSalesDatabase.BISAMPLE.F1 Revenue.CUST_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MySamplesSalesDatabase.BISAMPLE.D4 Addresses",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MySamplesSalesDatabase.BISAMPLE.D3 Customers.ADDRESS_KEY",
+        "rightColumn" : "physicalColumn:MySamplesSalesDatabase.BISAMPLE.D4 Addresses.ADDRESS_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}
